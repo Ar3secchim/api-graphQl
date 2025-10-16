@@ -2,8 +2,9 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./dist",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "target": "es2021",
+    "module": "nodenext",
+    "moduleResolution": "node16",
     "strict": true,
     "sourceMap": true,
     "declaration": true,
@@ -14,6 +15,8 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "skipLibCheck": true
   },
   "include": ["./**/*.ts"],
