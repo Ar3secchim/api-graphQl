@@ -15,9 +15,12 @@ export class CategoriesResolver {
   async addCategory(
     @Arg("data", () => CreateCategoryInput) data: CreateCategoryInput,
   ): Promise<Category> {
+    const id: any = Date.now().toString() + "-" + Math.random().toString(36).slice(2);
+
     const newCategory = new Category(
+      id,
       data.name,
-      data.description ? data.description : ""
+      data.description,
     );
 
     categoryData.push(newCategory);
