@@ -7,12 +7,16 @@ import { ApolloServer } from "apollo-server";
 import { buildSchema } from "type-graphql";
 
 import { CategoriesResolver } from "./resolvers/categories-resolver.js";
+import { CursesResolver } from "./resolvers/curses-resolver.js";
 
 async function main() {
   const currentDir = dirname(fileURLToPath(import.meta.url));
 
   const schema = await buildSchema({
-    resolvers: [CategoriesResolver],
+    resolvers: [
+      CategoriesResolver,
+      CursesResolver
+    ],
     emitSchemaFile: resolve(currentDir, "schema.gql"),
   });
 
