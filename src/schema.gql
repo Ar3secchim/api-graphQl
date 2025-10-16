@@ -27,12 +27,13 @@ input CreateCourseInput {
 }
 
 type Mutation {
-  addCategory(data: CreateCategoryInput!): Category!
-  addCourse(data: CreateCourseInput!): Course!
+  createCategory(data: CreateCategoryInput!): Category!
+  createCourse(data: CreateCourseInput!): Course!
 }
 
 type Query {
-  categories: [Category!]!
-  course(id: String!): Course
-  courses: [Course!]!
+  findCategoryById(id: String!): Category
+  findCourseById(id: String!): Course
+  listCategories: [Category!]!
+  listCourses: [Course!]!
 }
