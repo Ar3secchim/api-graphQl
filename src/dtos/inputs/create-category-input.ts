@@ -4,4 +4,7 @@ import { Field, InputType } from "type-graphql";
 export class CreateCategoryInput {
   @Field(() => String)
   name!: string;
+
+  @Field(() => String)
+  description?: string;
 }

@@ -9,6 +9,7 @@ type Category {
 }
 
 input CreateCategoryInput {
+  description: String!
   name: String!
 }
 

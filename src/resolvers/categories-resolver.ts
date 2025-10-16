@@ -1,4 +1,3 @@
-import { randomUUID } from "node:crypto";
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { categoryData } from "../db/category-data.js";
 import { CreateCategoryInput } from "../dtos/inputs/create-category-input.js";
@@ -17,7 +16,8 @@ export class CategoriesResolver {
     @Arg("data", () => CreateCategoryInput) data: CreateCategoryInput,
   ): Promise<Category> {
     const newCategory = new Category(
-      randomUUID(), data.name
+      data.name,
+      data.description ? data.description : ""
     );
 
     categoryData.push(newCategory);
